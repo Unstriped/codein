@@ -17,7 +17,7 @@ export const fetchPlugin = (inputCode: string) => {
 
       build.onLoad({ filter: /.*/ }, async (args: any) => {
         const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(
-          args.path
+          args.path,
         );
 
         if (cachedResult) {
@@ -48,7 +48,7 @@ export const fetchPlugin = (inputCode: string) => {
           resolveDir: new URL("./", response.url).pathname,
         };
 
-        // await fileCache.setItem(args.path, result);
+        await fileCache.setItem(args.path, result);
 
         return result;
       });
