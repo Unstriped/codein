@@ -5,13 +5,14 @@ import bundler from "../bundler";
 
 function CodeCell() {
   const [code, setCode] = useState("");
+  const [err, setErr] = useState("");
   const [input, setInput] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(async () => {
       const output = await bundler(input);
-      setCode(output);
-      console.log(output);
+      setCode(output.code);
+      setErr(output.err);
     }, 1000);
 
     return () => {
@@ -29,7 +30,7 @@ function CodeCell() {
         />
       </div>
       <div className="flex-1">
-        <CodePreview code={code} />
+        <CodePreview code={code} bundlingStatus={err} />
       </div>
     </section>
   );

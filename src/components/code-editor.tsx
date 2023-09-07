@@ -27,7 +27,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange }) => {
   }
 
   return (
-    <div className="mockup-code relative flex flex-col gap-2">
+    <div className="mockup-code relative flex h-full flex-col gap-2">
       <button
         className="btn btn-secondary btn-xs mr-2 self-end"
         onClick={onFormatClick}
@@ -38,7 +38,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange }) => {
         onMount={onEditorMount}
         defaultValue="// Write some code here :)"
         defaultLanguage="javascript"
-        height="50vh"
+        height="70vh"
         className="flex-1"
         options={{ wordWrap: "on", automaticLayout: true }}
         onChange={onChange}
