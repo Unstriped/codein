@@ -1,6 +1,6 @@
 export enum ActionType {
-  MOVE_CELL = "move_cell",
-  DELETE_CELL = "delete_cell",
-  INSERT_CELL_BEFORE = "insert_cell_before",
-  UPDATE_CELL = "update_cell",
+  MOVE_CELL = "cell/move",
+  DELETE_CELL = "cell/delete",
+  INSERT_CELL_BEFORE = "cell/insertBefore",
+  UPDATE_CELL = "cell/update",
 }
